@@ -93,6 +93,8 @@ class RobotArmPage extends StatelessWidget {
       'elbow_down': Icons.keyboard_arrow_down,
       'grip_close': Icons.close_fullscreen,
       'grip_open': Icons.open_in_full,
+      'wrist_up': Icons.rotate_right,
+      'wrist_down': Icons.rotate_left,
     };
     return Icon(iconMap[command] ?? Icons.error, size: 20);
   }
@@ -153,6 +155,14 @@ class RobotArmPage extends StatelessWidget {
                     [
                       buildControlButton("Elbow Up", "elbow_up"),
                       buildControlButton("Elbow Down", "elbow_down"),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          buildControlButton("Wrist Up", "wrist_up"),
+                          const SizedBox(width: 16),
+                          buildControlButton("Wrist Down", "wrist_down"),
+                        ],
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
